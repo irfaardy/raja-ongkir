@@ -74,7 +74,10 @@ Open .env file add
 Migrating table city and provinsi
 
     php artisan migrate
+**Caching Province and City**<br>
+Open console/cmd and run
 
+    php artisan raja-ongkir:cache
 **Caching City**<br>
 Open console/cmd and run
 
