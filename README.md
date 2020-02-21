@@ -1,6 +1,9 @@
+
+
+
+
 # Raja Ongkir Laravel Package
-[
-![License](https://poser.pugx.org/irfa/raja-ongkir/license?format=flat)](https://packagist.org/packages/irfa/raja-ongkir) <a href="https://www.buymeacoffee.com/OBaAofN" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-red.png" alt="Buy Me A Coffee" height="30px" ></a>
+[![GitHub license](https://img.shields.io/github/license/irfaardy/raja-ongkir?style=flat-square)](https://github.com/irfaardy/raja-ongkir/blob/master/LICENSE) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN)
 <h3>Installation with Composer</h3>
 
     composer require irfa/raja-ongkir
