@@ -21,7 +21,7 @@ class DBImport
 				$where = ['province_id' => $r->province_id];
 			
 			} elseif($type == 'city'){
-				$fill = ['city_id'=>$r->city_id,'province_id'=>$r->province_id,'province' => $r->province,'type'=>$r->type,'city_name'=>$r->city_name,'postal_code'=>$r->postal_code];
+				$fill = ['cixty_id'=>$r->city_id,'province_id'=>$r->province_id,'province' => $r->province,'type'=>$r->type,'city_name'=>$r->city_name,'postal_code'=>$r->postal_code];
 				$where = ['city_id' => $r->city_id];
 			}
 			if(DB::table(self::$table_DB)->where($where)->count() ==0){
@@ -31,9 +31,9 @@ class DBImport
 			 }
 			}
 			$count = DB::table(self::$table_DB)->count();
-			echo "Caching Success, ".$count." row(s) affected.";
+			echo "Cache has been created, ".$count." row(s) affected.";
 		} catch(\Exception $e){
-			echo "Can't creating cache. Error : ".$e;
+			echo "\033[91mCan't creating cache. Error\033[0m : ".$e;
 		}
 		
 	}

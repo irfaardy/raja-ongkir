@@ -37,11 +37,13 @@ class Api extends CacheCurl{
 
 	 }
 	 protected static function cacheProvince(){
-	 	echo "Getting data from RajaOngkir...".PHP_EOL;
+	 	self::setup_option();
+	 	echo "Retrieving data from \033[96m".self::$url."...\033[0m".PHP_EOL;
 	 	CacheCurl::caching(self::get_province())->province();
 	 }
 	 protected static function cacheCity(){
-	 	echo "Getting data from RajaOngkir...".PHP_EOL;
+	 	self::setup_option();
+	 	echo "Retrieving data from\033[96m ".self::$url."...\033[0m".PHP_EOL;
 	 	CacheCurl::caching(self::get_city())->city();
 	 }
 	 protected static function get_province($arr = null){
