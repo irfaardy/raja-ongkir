@@ -1,9 +1,5 @@
-
-
-
-
-# Raja Ongkir Laravel
-[![Latest Stable Version](https://poser.pugx.org/irfa/raja-ongkir/v/stable?format=flat-square) ](https://packagist.org/packages/irfa/raja-ongkir)[![License](https://poser.pugx.org/irfa/raja-ongkir/license?format=flat-square)](https://packagist.org/packages/irfa/raja-ongkir)
+# Raja Ongkir Laravel Package
+[![License](https://poser.pugx.org/irfa/raja-ongkir/license?format=flat)](https://packagist.org/packages/irfa/raja-ongkir)
 <h3>Installation with Composer</h3>
 
     composer require irfa/raja-ongkir
@@ -13,7 +9,7 @@
 ***
 
 
-<h3>PHP Native Setup</h3>
+<h2>PHP Native Setup</h2>
   
 
       <?php 
@@ -37,7 +33,7 @@
 
 
 ***
-<h3> Laravel Setup </h3>
+<h2> Laravel Setup </h2>
 
 <h3>Add to config/app.php</h3>
 
@@ -56,7 +52,7 @@
     
         ],
 
-  <h3>Publish Vendor</h3>
+  <h2>Publish Vendor</h2>
 
 
     php artisan vendor:publish --tag=raja-ongkir
@@ -67,26 +63,27 @@ Open .env file add
     RAJAONGKIR_ACCOUNT_TYPE = starter
     RAJAONGKIR_API_KEY = your-api-key
   ***
-<h3>Caching</h3>
+<h2>Caching</h2>
 
 > Caching is useful for loading city and province faster.
 
 Migrating table city and provinsi
 
     php artisan migrate
-**Caching Province and City**<br>
+<h3>Caching Province and City</h3><br>
 Open console/cmd and run
 
     php artisan raja-ongkir:cache
-**Caching City**<br>
+
+<h3>Caching City</h3><br>
 Open console/cmd and run
 
     php artisan raja-ongkir:city-cache
-**Caching Province**<br>
+<h3>Caching Province</h3><br>
 Open console/cmd and run
 
     php artisan raja-ongkir:prov-cache
-**Clear Cache**<br>
+<h3>Clear Cache</h3><br>
 Open console/cmd and run
 
     php artisan raja-ongkir:clear
@@ -95,7 +92,7 @@ Open console/cmd and run
 
       use RajaOngkir;
 
- **Get all province**
+<h3>Retrieve all province</h3>
 
      $get = RajaOngkir::getProvince();
      foreach($get as $prov):
@@ -105,7 +102,7 @@ Open console/cmd and run
 		
 		
     endforeach;
-**Search province**
+<h3>Search province</h3>
 
  
 
@@ -115,7 +112,7 @@ Open console/cmd and run
     	echo $get->province."<br>";// value = Bali
 	
    
-**Get all City** 
+<h3>Retrieve all City</h3>
 
     $get = RajaOngkir::getCity();
     foreach($get as $city):
@@ -129,7 +126,7 @@ Open console/cmd and run
 		
     endforeach;
     
-**Get all City in province** 
+<h3>Retrieve all city in province</h3>
 
     
     $get = RajaOngkir::find(['province_id' => 1])->getCity();
@@ -143,7 +140,7 @@ Open console/cmd and run
 		echo $city->postal_code."<br>"; // value = 80351
 		
     endforeach;
-   **Get courier**
+  <h3>Retrieve courier</h3>
    
 
       $get = RajaOngkir::find(['origin'=>1,
@@ -159,7 +156,7 @@ Open console/cmd and run
 		
 	  endforeach;
 	  
-**Example  cost Courier** 
+<h3>Retrieve  cost courier</h3>
    
 
      $params = ['origin'=>1,'destination'=>2,'weight'=>1000,'courier' => 'jne'
