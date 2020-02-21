@@ -70,19 +70,20 @@ Open .env file add
 Migrating table city and provinsi
 
     php artisan migrate
-**Caching Province and City**<br>
+<h3>Caching Province and City</h3><br>
 Open console/cmd and run
 
     php artisan raja-ongkir:cache
-**Caching City**<br>
+
+<h3>Caching City</h3><br>
 Open console/cmd and run
 
     php artisan raja-ongkir:city-cache
-**Caching Province**<br>
+<h3>Caching Province</h3><br>
 Open console/cmd and run
 
     php artisan raja-ongkir:prov-cache
-**Clear Cache**<br>
+<h3>Clear Cache</h3><br>
 Open console/cmd and run
 
     php artisan raja-ongkir:clear
@@ -91,7 +92,7 @@ Open console/cmd and run
 
       use RajaOngkir;
 
- **Retrieve all province**
+<h3>Retrieve all province</h3>
 
      $get = RajaOngkir::getProvince();
      foreach($get as $prov):
@@ -101,7 +102,7 @@ Open console/cmd and run
 		
 		
     endforeach;
-**Search province**
+<h3>Search province</h3>
 
  
 
@@ -111,7 +112,7 @@ Open console/cmd and run
     	echo $get->province."<br>";// value = Bali
 	
    
-**Retrieve all City** 
+<h3>Retrieve all City</h3>
 
     $get = RajaOngkir::getCity();
     foreach($get as $city):
@@ -125,7 +126,7 @@ Open console/cmd and run
 		
     endforeach;
     
-**Retrieve all city in province** 
+<h3>Retrieve all city in province</h3>
 
     
     $get = RajaOngkir::find(['province_id' => 1])->getCity();
@@ -139,7 +140,7 @@ Open console/cmd and run
 		echo $city->postal_code."<br>"; // value = 80351
 		
     endforeach;
-   **Retrieve courier**
+  <h3>Retrieve courier</h3>
    
 
       $get = RajaOngkir::find(['origin'=>1,
@@ -155,7 +156,7 @@ Open console/cmd and run
 		
 	  endforeach;
 	  
-**Retrieve  cost courier** 
+<h3>Retrieve  cost courier</h3>
    
 
      $params = ['origin'=>1,'destination'=>2,'weight'=>1000,'courier' => 'jne'
