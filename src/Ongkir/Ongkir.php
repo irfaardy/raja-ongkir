@@ -5,6 +5,7 @@
 namespace Irfa\RajaOngkir\Ongkir;
 
 use Irfa\RajaOngkir\Ongkir\Func\Api;
+use Irfa\RajaOngkir\Ongkir\Func\ROCache;
 use Exception;
 
 class Ongkir extends Api{
@@ -21,6 +22,14 @@ class Ongkir extends Api{
 	 	 }
 	       	
 	    }
+
+	 public static function cachingProvince(){
+	 	self::cacheProvince();
+	 } 
+	 public static function cachingCity(){
+	 	self::cacheCity();
+	 }
+
 	 public static function getCostDetails(){
 	 	return self::get_cost_details(self::$arr);
 	 } 
@@ -30,12 +39,33 @@ class Ongkir extends Api{
 	 }
 
 	 public static function getProvince(){
-
-	 	 	return self::get_province(self::$arr);
+	 	if(function_exists('config') AND function_exists('app')){
+	 		if(ROCache::checkProv()){
+	 			$ret = ROCache::getProv(self::$arr);
+	 		} else{
+	 			$ret = self::get_province(self::$arr);
+	 		}
+	 	}  else{
+	 			$ret = self::get_province(self::$arr);
+	 		}
+	 	 	return $ret;
 	 }
 
 	 public static function getCity(){
+		if(function_exists('config') AND function_exists('app')){
+	 		if(ROCache::checkCity()){
+	 			if(count(ROCache::getCity(self::$arr)) > 0){
+	 				$ret = ROCache::getCity(self::$arr);
+	 			} else{
 
-	 	 	return self::get_city(self::$arr);
+	 				$ret = self::get_city(self::$arr);
+	 			}
+	 		} else{
+	 			$ret = self::get_city(self::$arr);
+	 		}
+	 	}  else{
+	 			$ret = self::get_city(self::$arr);
+	 		}
+	 	 	return $ret;
 	 }
 }

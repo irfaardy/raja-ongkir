@@ -5,7 +5,10 @@
 */
 namespace Irfa\RajaOngkir\Ongkir\Func;
 
-class Api {
+use Irfa\RajaOngkir\Caching\CacheCurl;
+use Exception;
+
+class Api extends CacheCurl{
 
 	 private static $account_type;
 	 private static $api_key;
@@ -33,6 +36,14 @@ class Api {
 	 		}
 
 	 }
+	 protected static function cacheProvince(){
+	 	echo "Getting data from RajaOngkir...".PHP_EOL;
+	 	CacheCurl::caching(self::get_province())->province();
+	 }
+	 protected static function cacheCity(){
+	 	echo "Getting data from RajaOngkir...".PHP_EOL;
+	 	CacheCurl::caching(self::get_city())->city();
+	 }
 	 protected static function get_province($arr = null){
 	 	if($arr != null){
 	 		$province_id = array_key_exists('province_id', $arr)?"?id=".$arr['province_id']:null;
@@ -59,12 +70,17 @@ class Api {
 			curl_close($curl);
 
 			if ($err) {
-			  echo "cURL Error #:" . $err;
+			  echo "Can't connect to server, please check your internet connection.";
+			  exit();
 			} else {
-			  $res = json_decode($response,false)->rajaongkir->results;
-			 
+			 $json = json_decode($response,false)->rajaongkir;
+				if($json->status->code == "400"){
+					throw new Exception($json->status->description);
+				} else{
+					$res = $json->results;
+					return $res;
+				}
 
-			  return $res;
 			}
 	 }
 	 protected static function get_city($arr=null){
@@ -93,12 +109,16 @@ class Api {
 			curl_close($curl);
 
 			if ($err) {
-			  echo "cURL Error #:" . $err;
+			  echo "Can't connect to server, please check your internet connection.";
+			  exit();
 			} else {
-			  $res = json_decode($response,false)->rajaongkir->results;
-			 
-
-			 return $res;
+			 $json = json_decode($response,false)->rajaongkir;
+			 if($json->status->code == "400"){
+			 	throw new Exception($json->status->description);
+			 } else{
+			  	$res = $json->results;
+				return $res;
+				}
 			}
 	 }
 	 protected static function get_courier($arr){
@@ -134,12 +154,17 @@ class Api {
             curl_close($curl);
 
             if ($err) {
-              return "cURL Error #:" . $err;
+              echo "Can't connect to server, please check your internet connection.";
+              exit();
             } else {
-               
-             
-        		$res = json_decode($response,false)->rajaongkir->results;
-        		return $res;
+               $json = json_decode($response,false)->rajaongkir;
+				 if($json->status->code == "400"){
+				 	 throw new Exception($json->status->description);
+				 } else{
+				  $res = $json->results;
+					return $res;
+					}
+				
 			}
 	}
 	private static function curl_cost_option($origin,$destination,$weight,$courier){

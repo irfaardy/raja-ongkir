@@ -23,10 +23,20 @@ class RajaOngkirServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-         $this->loadRoutesFrom(__DIR__.'/routes.php');
+        
         $this->publishes([
-        __DIR__.'/../resources/config/irfa/rajaongkir.php' => config_path('irfa/rajaongkir.php'),
-    ]);
+        __DIR__.'/../resources/config/irfa/rajaongkir.php' => config_path('irfa/rajaongkir.php')],'raja-ongkir');
+
+        $this->publishes([
+        __DIR__.'/../database/migrations/' => database_path('migrations')
+            ], 'raja-ongkir'); 
+
+        $this->publishes([ __DIR__.'/../database/migrations/' =>  database_path('migrations')
+            ], 'raja-ongkir');
+
+        $this->publishes([ __DIR__.'/../console/' =>  app_path('console')
+            ], 'raja-ongkir');
+       
         
     }
 }
