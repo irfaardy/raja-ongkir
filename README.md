@@ -7,9 +7,10 @@
 
     composer require irfa/raja-ongkir
 
+>You can get Composer [ here]( https://getcomposer.org/download/)
+
 ***
 
-> You can get API key in [Raja Ongkir](https://rajaongkir.com/)
 
 <h3>PHP Native Setup</h3>
   
@@ -29,6 +30,7 @@
     		'api_key' => 'your-api-key',
     	];
 
+> You can get API key in [Raja Ongkir](https://rajaongkir.com/)
 ***
 <h3> Laravel Setup </h3>
 
