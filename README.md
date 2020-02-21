@@ -3,6 +3,7 @@
 
 
 # Raja Ongkir Laravel
+[![Latest Stable Version](https://poser.pugx.org/irfa/raja-ongkir/v/stable?format=flat-square) ](https://packagist.org/packages/irfa/raja-ongkir)[![License](https://poser.pugx.org/irfa/raja-ongkir/license?format=flat-square)](https://packagist.org/packages/irfa/raja-ongkir)
 <h3>Installation with Composer</h3>
 
     composer require irfa/raja-ongkir
@@ -140,6 +141,8 @@ Open .env file add
      $params = ['origin'=>1,'destination'=>2,'weight'=>1000,'courier' => 'jne'
     			   ]
      foreach(RajaOngkir::find($params)->getCostDetails() as $cost):
+
+
      
     	echo "Service: ".$cost->service."<br>";
     	echo "Description: ".$cost->description."<br>";
