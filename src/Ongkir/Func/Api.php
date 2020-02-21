@@ -8,6 +8,7 @@ class Api {
 
 	 private static $account_type;
 	 private static $api_key;
+	 private static $url;
 	 private static $count=0;
 
 	 function __construct(){
@@ -22,7 +23,13 @@ class Api {
 	 		require(__DIR__."../../../../config/config.php");
 	 		self::$account_type =$config['account_type'];
 	 		self::$api_key = $config['api_key'];
+
 	 	}
+		if(self::$account_type == 'pro'){
+				self::$url = "https://pro.rajaongkir.com/api";
+	 		} else{
+	 			self::$url = "https://api.rajaongkir.com/".self::$account_type;
+	 		}
 
 	 }
 	 protected static function get_province($arr = null){
@@ -34,7 +41,7 @@ class Api {
 	 	self::setup_option();
 	 	$curl = curl_init();
 	 	 curl_setopt_array($curl, array(
-		  CURLOPT_URL => "https://api.rajaongkir.com/".self::$account_type."/province".$province_id,
+		  CURLOPT_URL => self::$url."/province".$province_id,
 		  CURLOPT_RETURNTRANSFER => true,
 		  CURLOPT_ENCODING => "",
 		  CURLOPT_MAXREDIRS => 10,
@@ -68,7 +75,7 @@ class Api {
 	 	self::setup_option();
 	 	$curl = curl_init();
 	 	 curl_setopt_array($curl, array(
-		  CURLOPT_URL => "https://api.rajaongkir.com/".self::$account_type."/city".$province_id,
+		  CURLOPT_URL => self::$url."/city".$province_id,
 		  CURLOPT_RETURNTRANSFER => true,
 		  CURLOPT_ENCODING => "",
 		  CURLOPT_MAXREDIRS => 10,
@@ -90,7 +97,7 @@ class Api {
 			  $res = json_decode($response,false)->rajaongkir->results;
 			 
 
-			  return $res;
+			 return $res;
 			}
 	 }
 	 protected static function get_courier($arr){
@@ -138,7 +145,7 @@ class Api {
 		self::setup_option();
 		// self::$api_key = 'cd241c22aa5365c37e2464bdbe7b880e';
 		return array(
-	              CURLOPT_URL => 'https://api.rajaongkir.com/'.self::$account_type.'/cost',
+	              CURLOPT_URL => self::$url.'/cost',
 	              CURLOPT_RETURNTRANSFER => true,
 	              CURLOPT_ENCODING => "",
 	              CURLOPT_MAXREDIRS => 10,
