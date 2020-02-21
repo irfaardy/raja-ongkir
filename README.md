@@ -8,6 +8,9 @@
     composer require irfa/raja-ongkir
 
 ***
+
+> You can get API key in [Raja Ongkir](https://rajaongkir.com/)
+
 <h3>PHP Native Setup</h3>
   
 
@@ -16,7 +19,7 @@
             
          use Irfa\RajaOngkir\Ongkir\Ongkir as RajaOngkir;
          ....
-<b>Configuration File</b><br>
+<b>Configuration File</b>
 **File Location :** vendor/irfa/raja-ongkir/config/config.php
 
     <?php
@@ -28,9 +31,8 @@
 
 ***
 <h3> Laravel Setup </h3>
-<h3>Add to config/app.php</h3>
 
-  
+<h3>Add to config/app.php</h3>
 
     'providers' => [
 	      ....
