@@ -56,10 +56,10 @@
     
         ],
 
-  <h3>Publish Config File</h3>
+  <h3>Publish Vendor</h3>
 
 
-    php artisan vendor:publish
+    php artisan vendor:publish --tag=raja-ongkir
 
 Open .env file add 
 
@@ -67,6 +67,27 @@ Open .env file add
     RAJAONGKIR_ACCOUNT_TYPE = starter
     RAJAONGKIR_API_KEY = your-api-key
   ***
+<h3>Caching</h3>
+
+> Caching is useful for loading city and province faster.
+
+Migrating table city and provinsi
+
+    php artisan migrate
+
+**Caching City**<br>
+Open console/cmd and run
+
+    php artisan raja-ongkir:city-cache
+**Caching Province**<br>
+Open console/cmd and run
+
+    php artisan raja-ongkir:prov-cache
+**Clear Cache**<br>
+Open console/cmd and run
+
+    php artisan raja-ongkir:clear
+***
   <h3>Usage</h3>
 
       use RajaOngkir;
@@ -139,20 +160,21 @@ Open .env file add
    
 
      $params = ['origin'=>1,'destination'=>2,'weight'=>1000,'courier' => 'jne'
-    			   ]
-     foreach(RajaOngkir::find($params)->getCostDetails() as $cost):
+    			   ];
+	     $get = RajaOngkir::find($params)->getCostDetails();
+	     foreach($get as $cost):
 
 
      
     	echo "Service: ".$cost->service."<br>";
     	echo "Description: ".$cost->description."<br>";
     	
-    	foreach($cost->cost as $detail){
+    	foreach($cost->cost as $detail):
     		echo "Value: ".$detail->value."<br>";
     		echo "Estimasi: ".$detail->etd."<br>";
     		echo "Note: ".$detail->note."<br>";
     		echo "<hr>";
-    	}
+    	endforeach;
     endforeach;
 
 
