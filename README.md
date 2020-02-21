@@ -21,7 +21,8 @@
          use Irfa\RajaOngkir\Ongkir\Ongkir as RajaOngkir;
          ....
 <b>Configuration File</b>
-**File Location :** vendor/irfa/raja-ongkir/config/config.php
+
+> **Config location :** vendor/irfa/raja-ongkir/config/config.php
 
     <?php
     	$config = [
