@@ -2,18 +2,23 @@
 /* 
 	Author: Irfa Ardiansyah <irfa.backend@protonmail.com>
 */
-
 namespace Irfa\RajaOngkir\Ongkir;
 
 use Irfa\RajaOngkir\Ongkir\Func\Api;
+use Exception;
 
 class Ongkir extends Api{
 
 	 private static $arr;
 
 	 public static function find($arr){
+	 	if(is_array($arr)){
 	 		self::$arr = $arr;
 	 	 	return new static();
+	 	 } else{
+	 	 	 throw new Exception("Parameter must be an array.");
+	 	 	 return false;
+	 	 }
 	       	
 	    }
 	 public static function getCostDetails(){
