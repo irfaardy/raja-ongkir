@@ -2,6 +2,7 @@
     "name": "irfa/raja-ongkir",
     "description": "\"Laravel Raja Ongkir Package\"",
     "license": "MIT",
+    "keywords": ["laravel", "ongkir", "cek ongkir", "raja ongkir", "php"],
     "authors": [
         {
             "name": "Irfa A",
@@ -9,7 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": "^7.2",
+        "illuminate/database": "~5.0|^6.0",
     },
     "autoload": {
             "psr-4": {
