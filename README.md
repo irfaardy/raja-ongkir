@@ -1,7 +1,3 @@
-
-
-
-
 # Raja Ongkir Laravel Package
 [![License](https://poser.pugx.org/irfa/raja-ongkir/license?format=flat)](https://packagist.org/packages/irfa/raja-ongkir)
 <h3>Installation with Composer</h3>
@@ -13,7 +9,7 @@
 ***
 
 
-<h3>PHP Native Setup</h3>
+<h2>PHP Native Setup</h2>
   
 
       <?php 
@@ -37,7 +33,7 @@
 
 
 ***
-<h3> Laravel Setup </h3>
+<h2> Laravel Setup </h2>
 
 <h3>Add to config/app.php</h3>
 
@@ -56,7 +52,7 @@
     
         ],
 
-  <h3>Publish Vendor</h3>
+  <h2>Publish Vendor</h2>
 
 
     php artisan vendor:publish --tag=raja-ongkir
@@ -67,7 +63,7 @@ Open .env file add
     RAJAONGKIR_ACCOUNT_TYPE = starter
     RAJAONGKIR_API_KEY = your-api-key
   ***
-<h3>Caching</h3>
+<h2>Caching</h2>
 
 > Caching is useful for loading city and province faster.
 
@@ -95,7 +91,7 @@ Open console/cmd and run
 
       use RajaOngkir;
 
- **Get all province**
+ **Retrieve all province**
 
      $get = RajaOngkir::getProvince();
      foreach($get as $prov):
@@ -115,7 +111,7 @@ Open console/cmd and run
     	echo $get->province."<br>";// value = Bali
 	
    
-**Get all City** 
+**Retrieve all City** 
 
     $get = RajaOngkir::getCity();
     foreach($get as $city):
@@ -129,7 +125,7 @@ Open console/cmd and run
 		
     endforeach;
     
-**Get all City in province** 
+**Retrieve all city in province** 
 
     
     $get = RajaOngkir::find(['province_id' => 1])->getCity();
@@ -143,7 +139,7 @@ Open console/cmd and run
 		echo $city->postal_code."<br>"; // value = 80351
 		
     endforeach;
-   **Get courier**
+   **Retrieve courier**
    
 
       $get = RajaOngkir::find(['origin'=>1,
@@ -159,7 +155,7 @@ Open console/cmd and run
 		
 	  endforeach;
 	  
-**Example  cost Courier** 
+**Retrieve  cost courier** 
    
 
      $params = ['origin'=>1,'destination'=>2,'weight'=>1000,'courier' => 'jne'
