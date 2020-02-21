@@ -1,7 +1,3 @@
-
-
-
-
 # Raja Ongkir Laravel Package
 [![GitHub license](https://img.shields.io/github/license/irfaardy/raja-ongkir?style=flat-square)](https://github.com/irfaardy/raja-ongkir/blob/master/LICENSE) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN)
 <h3>Installation with Composer</h3>
@@ -32,8 +28,7 @@
     		'api_key' => 'your-api-key',
     	];
 
-> You can get API key in [Raja Ongkir](https://rajaongkir.com/).
-> <b>Account type supported </b>: starter, basic, and pro.
+> You can get API key in [Raja Ongkir](https://rajaongkir.com/).<br> Account type supported : starter, basic, and pro.
 
 
 ***
@@ -69,9 +64,9 @@ Open .env file add
   ***
 <h2>Caching</h2>
 
-> Caching is useful for retrieving city and province faster.
+> Caching is useful for loading city and province faster.<br>Before do caching you must run migrate first.
 
-Migrating table city and provinsi
+**Migrating table city and provinsi**
 
     php artisan migrate
 <h3>Caching Province and City</h3><br>
