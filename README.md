@@ -32,6 +32,9 @@
     	];
 
 > You can get API key in [Raja Ongkir](https://rajaongkir.com/)
+> Account type supported : starter, basic, and pro
+
+
 ***
 <h3> Laravel Setup </h3>
 
