@@ -75,15 +75,15 @@ Migrating table city and provinsi
 
     php artisan migrate
 
-**Caching City**
+**Caching City**<br>
 Open console/cmd and run
 
     php artisan raja-ongkir:city-cache
-**Caching Province**
+**Caching Province**<br>
 Open console/cmd and run
 
     php artisan raja-ongkir:prov-cache
-**Clear Cache**
+**Clear Cache**<br>
 Open console/cmd and run
 
     php artisan raja-ongkir:clear
