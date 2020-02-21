@@ -33,7 +33,7 @@
     	];
 
 > You can get API key in [Raja Ongkir](https://rajaongkir.com/).
-> Account type supported : starter, basic, and pro.
+> <b>Account type supported </b>: starter, basic, and pro.
 
 
 ***
@@ -69,7 +69,7 @@ Open .env file add
   ***
 <h2>Caching</h2>
 
-> Caching is useful for loading city and province faster.
+> Caching is useful for retrieving city and province faster.
 
 Migrating table city and provinsi
 
