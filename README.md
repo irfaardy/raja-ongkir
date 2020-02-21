@@ -3,11 +3,16 @@
 
 
 # Raja Ongkir Laravel
+[![Latest Stable Version](https://poser.pugx.org/irfa/raja-ongkir/v/stable?format=flat-square) ](https://packagist.org/packages/irfa/raja-ongkir)[![License](https://poser.pugx.org/irfa/raja-ongkir/license?format=flat-square)](https://packagist.org/packages/irfa/raja-ongkir)
 <h3>Installation with Composer</h3>
 
     composer require irfa/raja-ongkir
 
+>You can get Composer [ here]( https://getcomposer.org/download/)
+
 ***
+
+
 <h3>PHP Native Setup</h3>
   
 
@@ -16,8 +21,9 @@
             
          use Irfa\RajaOngkir\Ongkir\Ongkir as RajaOngkir;
          ....
-<b>Configuration File</b><br>
-**File Location :** vendor/irfa/raja-ongkir/config/config.php
+<b>Configuration File</b>
+
+> **Config location :** vendor/irfa/raja-ongkir/config/config.php
 
     <?php
     	$config = [
@@ -26,11 +32,14 @@
     		'api_key' => 'your-api-key',
     	];
 
+> You can get API key in [Raja Ongkir](https://rajaongkir.com/).
+> Account type supported : starter, basic, and pro.
+
+
 ***
 <h3> Laravel Setup </h3>
-<h3>Add to config/app.php</h3>
 
-  
+<h3>Add to config/app.php</h3>
 
     'providers' => [
 	      ....
@@ -132,6 +141,8 @@ Open .env file add
      $params = ['origin'=>1,'destination'=>2,'weight'=>1000,'courier' => 'jne'
     			   ]
      foreach(RajaOngkir::find($params)->getCostDetails() as $cost):
+
+
      
     	echo "Service: ".$cost->service."<br>";
     	echo "Description: ".$cost->description."<br>";
