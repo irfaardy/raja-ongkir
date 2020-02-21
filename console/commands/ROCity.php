@@ -5,21 +5,21 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Irfa\RajaOngkir\Ongkir\Ongkir as RajaOngkir;
 
-class Province extends Command
+class ROCity extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'raja-ongkir:prov-cache';
+    protected $signature = 'raja-ongkir:city-cache';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create province list cache for faster loading province list';
+    protected $description = 'Create city list cache for faster loading city list';
 
     /**
      * Create a new command instance.
@@ -38,6 +38,6 @@ class Province extends Command
      */
     public function handle()
     {
-        RajaOngkir::cachingProvince();
+       RajaOngkir::cachingCity();
     }
 }

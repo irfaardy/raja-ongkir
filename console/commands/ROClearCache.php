@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Irfa\RajaOngkir\Ongkir\Func\ROCache;
 
-class ClearROCache extends Command
+class ROClearCache extends Command
 {
     /**
      * The name and signature of the console command.

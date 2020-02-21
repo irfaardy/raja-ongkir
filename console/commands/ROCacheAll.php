@@ -3,23 +3,24 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+
 use Irfa\RajaOngkir\Ongkir\Ongkir as RajaOngkir;
 
-class City extends Command
+class ROCacheAll extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'raja-ongkir:city-cache';
+    protected $signature = 'raja-ongkir:cache';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create city list cache for faster loading city list';
+    protected $description = 'Command description';
 
     /**
      * Create a new command instance.
@@ -38,6 +39,16 @@ class City extends Command
      */
     public function handle()
     {
-       RajaOngkir::cachingCity();
+        echo "---------------------".PHP_EOL;
+        echo"Province Caching".PHP_EOL;
+        echo"---------------------".PHP_EOL;
+        RajaOngkir::cachingProvince();
+        echo PHP_EOL."---------------------".PHP_EOL;
+        sleep(1);//Cooling Down
+        echo"City Caching".PHP_EOL;
+        echo "---------------------".PHP_EOL;
+        RajaOngkir::cachingCity();
+        echo PHP_EOL."---------------------".PHP_EOL;
+
     }
 }
