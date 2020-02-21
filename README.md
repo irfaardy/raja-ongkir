@@ -1,6 +1,6 @@
-# Raja Ongkir Laravel Package
+# 🚀Raja Ongkir Laravel Package
 [![GitHub license](https://img.shields.io/github/license/irfaardy/raja-ongkir?style=flat-square)](https://github.com/irfaardy/raja-ongkir/blob/master/LICENSE) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN)
-<h3>Installation with Composer</h3>
+<h3>🛠️ Installation with Composer </h3>
 
     composer require irfa/raja-ongkir
 
@@ -9,7 +9,7 @@
 ***
 
 
-<h2>PHP Native Setup</h2>
+<h2>🛠️ PHP Native Setup</h2>
   
 
       <?php 
@@ -32,7 +32,7 @@
 
 
 ***
-<h2> Laravel Setup </h2>
+<h2>🛠️ Laravel Setup </h2>
 
 <h3>Add to config/app.php</h3>
 
@@ -62,9 +62,9 @@ Open .env file add
     RAJAONGKIR_ACCOUNT_TYPE = starter
     RAJAONGKIR_API_KEY = your-api-key
   ***
-<h2>Caching</h2>
+<h2>🚀 Caching</h2>
 
-> Caching is useful for loading city and province faster.<br>Before do caching you must run migrate first.
+> Caching is useful for loading city and province faster🚀.<br>Before do caching you must run migrate first.
 
 **Migrating table city and provinsi**
 
@@ -87,7 +87,7 @@ Open console/cmd and run
 
     php artisan raja-ongkir:clear
 ***
-  <h3>Usage</h3>
+  <h3>💻 Usage</h3>
 
       use RajaOngkir;
 
