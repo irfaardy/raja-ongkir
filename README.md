@@ -57,7 +57,7 @@
 
     php artisan vendor:publish --tag=raja-ongkir
 
-Open .env file add 
+Open .env file add line
 
     ....
     RAJAONGKIR_ACCOUNT_TYPE = starter
