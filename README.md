@@ -1,3 +1,4 @@
+
 # 🚀Raja Ongkir Laravel Package
 [![GitHub license](https://img.shields.io/github/license/irfaardy/raja-ongkir?style=flat-square)](https://github.com/irfaardy/raja-ongkir/blob/master/LICENSE) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN)
 <h3>🛠️ Installation with Composer </h3>
@@ -68,11 +69,14 @@ Open .env file add
   ***
 <h2>🚀 Caching</h2>
 
-> Caching is useful for loading city and province faster🚀.<br>If you want to use database cache, you must run migrate first. <br>You can change cache type ini config/irfa/rajaongkir.php. <br><br>**Cache support :**  database and file
+> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini config/irfa/rajaongkir.php. <br><br>**Cache support :**  database and file
+
 
 **Migrating table city and provinsi**
+> If you want to use database cache, you must run migrate first. 
 
     php artisan migrate
+
 <h3>Caching Province and City</h3><br>
 Open console/cmd and run
 
