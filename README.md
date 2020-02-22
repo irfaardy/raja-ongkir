@@ -64,7 +64,7 @@ Open .env file add
   ***
 <h2>🚀 Caching</h2>
 
-> Caching is useful for loading city and province faster🚀.<br>Before do caching you must run migrate first. <br>You can change cache type ini config/irfa/rajaongkir.php. <br>**Cache support :**  database and file
+> Caching is useful for loading city and province faster🚀.<br>Before do caching you must run migrate first. <br>You can change cache type ini config/irfa/rajaongkir.php. <br><br>**Cache support :**  database and file
 
 **Migrating table city and provinsi**
 
