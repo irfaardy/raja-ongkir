@@ -61,6 +61,10 @@ Open .env file add
     ....
     RAJAONGKIR_ACCOUNT_TYPE = starter
     RAJAONGKIR_API_KEY = your-api-key
+    RAJAONGKIR_PROV_TABLE=ro_province
+    RAJAONGKIR_CITY_TABLE=ro_city
+    RAJAONGKIR_CACHE=database
+
   ***
 <h2>🚀 Caching</h2>
 
