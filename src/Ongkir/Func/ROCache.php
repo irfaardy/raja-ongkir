@@ -6,11 +6,19 @@
 namespace Irfa\RajaOngkir\Ongkir\Func;
 
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Exception;
 
 class ROCache {
 
+	public static function cacheFile($name,$find = null){
+		$cache = Cache::get('cache-'.$name);
+		if($find != null){
+			$cache = collect($cache)->where("province_id", $find['province_id']);
+		}
+		return $cache;		
+	}
 	public static function clearCache(){
 		$prov = config('irfa.rajaongkir.province_table');
 		$city = config('irfa.rajaongkir.city_table');

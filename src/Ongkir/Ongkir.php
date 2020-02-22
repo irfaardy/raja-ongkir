@@ -40,8 +40,22 @@ class Ongkir extends Api{
 
 	 public static function getProvince(){
 	 	if(function_exists('config') AND function_exists('app')){
-	 		if(ROCache::checkProv()){
-	 			$ret = ROCache::getProv(self::$arr);
+	 		$cache_type = strtolower(config('irfa.rajaongkir.cache_type'));
+	 		if($cache_type == 'database'){
+	 			if(ROCache::checkProv()){
+	 				if(count(ROCache::getProv(self::$arr)) > 0){
+	 					$ret = ROCache::getProv(self::$arr);
+	 				} else{
+	 					$ret = self::get_province(self::$arr);
+	 				}
+	 			}
+	 		} elseif($cache_type == 'file'){
+	 			$ret = ROCache::cacheFile(config('irfa.rajaongkir.province_table'),self::$arr);
+	 			if($ret == null){
+	 				throw new Exception("Cache is empty.");
+	 	 	 		return false;
+	 			}
+
 	 		} else{
 	 			$ret = self::get_province(self::$arr);
 	 		}
@@ -53,12 +67,20 @@ class Ongkir extends Api{
 
 	 public static function getCity(){
 		if(function_exists('config') AND function_exists('app')){
-	 		if(ROCache::checkCity()){
-	 			if(count(ROCache::getCity(self::$arr)) > 0){
-	 				$ret = ROCache::getCity(self::$arr);
-	 			} else{
-
-	 				$ret = self::get_city(self::$arr);
+	 		$cache_type = strtolower(config('irfa.rajaongkir.cache_type'));
+	 		if($cache_type == 'database'){
+	 			if(ROCache::checkCity()){
+	 				if(count(ROCache::getCity(self::$arr)) > 0){
+	 					$ret = ROCache::getCity(self::$arr);
+	 				} else{
+	 					$ret = self::get_city(self::$arr);
+	 				}
+	 			}
+	 		} elseif($cache_type == 'file'){
+	 			$ret = ROCache::cacheFile(config('irfa.rajaongkir.city_table'),self::$arr);
+	 			if($ret == null){
+	 				throw new Exception("Cache is empty.");
+	 	 	 		return false;
 	 			}
 	 		} else{
 	 			$ret = self::get_city(self::$arr);

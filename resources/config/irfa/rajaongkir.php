@@ -8,6 +8,9 @@ return [
 		'province_table' => env('RAJAONGKIR_PROV_TABLE','ro_province'),
 
 		'city_table' => env('RAJAONGKIR_CITY_TABLE','ro_city'),
+		
+		// Cache supported database,and file, default value : database 
+		'cache_type' => env('RAJAONGKIR_CACHE','database'),
 
 
 
