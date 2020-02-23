@@ -1,15 +1,8 @@
-
 # 🚀Raja Ongkir Laravel Package
 [![GitHub license](https://img.shields.io/github/license/irfaardy/raja-ongkir?style=flat-square)](https://github.com/irfaardy/raja-ongkir/blob/master/LICENSE) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN)
 
 Package ini berguna untuk mengecek biaya ongkos kirim dari kurir, package ini dapat digunakan di Laravel 5 / 6 atau PHP Native.
 
-<h2>Contribution</h2>
-ENG:<br>
-If you want to contribute this project and make it better, your help is very welcome.<br>
-IDN:<br>
-Jika Anda ingin berkontribusi dalam proyek ini dan menjadikannya lebih baik, bantuan Anda sangat kami harapkan.
-****
 
 <h3>🛠️ Installation with Composer </h3>
 
@@ -17,7 +10,7 @@ Jika Anda ingin berkontribusi dalam proyek ini dan menjadikannya lebih baik, ban
 
 >You can get Composer [ here]( https://getcomposer.org/download/)
 
-***
+
 
 
 <h2>🛠️ PHP Native Setup</h2>
@@ -194,5 +187,10 @@ Open console/cmd and run
     	endforeach;
     endforeach;
 
-****
+<h2>Contribution</h2>
+ENG:<br>
+If you want to contribute this project and make it better, your help is very welcome.<br>
+IDN:<br>
+Jika Anda ingin berkontribusi dalam proyek ini dan menjadikannya lebih baik, bantuan Anda sangat kami harapkan.
 
+***
