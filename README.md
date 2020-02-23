@@ -6,7 +6,7 @@ Package ini berguna untuk mengecek biaya ongkos kirim dari kurir, package ini da
 
 <h2>Contribution</h2>
 ENG:<br>
-If you want to contribute this project and make it better, your help is very welcome.
+If you want to contribute this project and make it better, your help is very welcome.<br>
 IDN:<br>
 Jika Anda ingin berkontribusi dalam proyek ini dan menjadikannya lebih baik, bantuan Anda sangat kami harapkan.
 ****
