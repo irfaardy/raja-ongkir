@@ -17,11 +17,5 @@
     "autoload": {
             "psr-4": {
                 "Irfa\\RajaOngkir\\": "src/"
-            },
-    "extra": {
-        "branch-alias": {
-            "v1.3.x-dev": "1.3"
-        }
-    }
-    }
+            }
 }
