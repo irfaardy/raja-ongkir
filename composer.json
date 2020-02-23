@@ -18,4 +18,5 @@
             "psr-4": {
                 "Irfa\\RajaOngkir\\": "src/"
             }
+    }
 }
