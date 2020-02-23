@@ -4,7 +4,12 @@
 
 Package ini berguna untuk mengecek biaya ongkos kirim dari kurir, package ini dapat digunakan di Laravel 5 / 6 atau PHP Native.
 
-Silahkan jika anda ingin ikut mengembangkan package ini ^_^.
+<h2>Contribution</h2>
+ENG:<br>
+If you want to contribute this project and make it better, your help is very welcome.
+IDN:<br>
+Jika Anda ingin berkontribusi dalam proyek ini dan menjadikannya lebih baik, bantuan Anda sangat kami harapkan.
+****
 
 <h3>🛠️ Installation with Composer </h3>
 
@@ -190,5 +195,4 @@ Open console/cmd and run
     endforeach;
 
 ****
-<h2>Contribution</h2>
-If you want to contribute this project and make it better, your help is very welcome.
+
