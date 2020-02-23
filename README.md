@@ -4,7 +4,7 @@
 
 Package ini berguna untuk mengecek biaya ongkos kirim dari kurir, package ini dapat digunakan di Laravel 5 / 6 atau PHP Native.
 
-Silahkan jika anda ingin ikut mengembangkan package ini ^_^6.
+Silahkan jika anda ingin ikut mengembangkan package ini ^_^.
 
 <h3>🛠️ Installation with Composer </h3>
 
