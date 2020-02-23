@@ -5,7 +5,7 @@
 namespace Irfa\RajaOngkir\Ongkir;
 
 use Irfa\RajaOngkir\Ongkir\Func\Api;
-use Irfa\RajaOngkir\Ongkir\Func\ROCache;
+use Irfa\RajaOngkir\Caching\ROCache;
 use Exception;
 
 class Ongkir extends Api{

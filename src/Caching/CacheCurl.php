@@ -18,8 +18,8 @@ class CacheCurl extends DBImport
 	private static function _import(){
 		$cache_type = strtolower(config('irfa.rajaongkir.cache_type'));
 		if($cache_type == 'file'){
-			Cache::store('file')->put('cache-'.self::$table, self::$bucket);
-			echo"Cache has been created. ".self::formatBytes(strlen(serialize(Cache::get('cache-'.self::$table))));
+			Cache::store('file')->put('ro-cache-'.self::$table, self::$bucket);
+			echo"Cache has been created. ".self::formatBytes(strlen(serialize(Cache::get('ro-cache-'.self::$table))));
 		} elseif($cache_type == 'database'){
 			self::import(self::$table,self::$bucket,self::$type);
 		} elseif($cache_type==null){

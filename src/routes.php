@@ -1,4 +1,4 @@
 <?php
-Route::get('demo', function() {
-    echo 'Hello from the demo package!';
+Route::get('raja-ongkir', function() {
+    dd(RajaOngkir::getProvince());
 });

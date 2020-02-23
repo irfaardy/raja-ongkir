@@ -20,7 +20,7 @@ class ROCacheAll extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Create City and Province list cache for faster loading city and province. ';
 
     /**
      * Create a new command instance.

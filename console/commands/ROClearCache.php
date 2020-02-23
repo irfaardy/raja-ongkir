@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Irfa\RajaOngkir\Ongkir\Func\ROCache;
+use Irfa\RajaOngkir\Caching\ROCache;
 
 class ROClearCache extends Command
 {

@@ -32,7 +32,7 @@ return [
 		'city_table' => env('RAJAONGKIR_CITY_TABLE','ro_city'),
 		
 		// Cache supported database,and file, default value : database 
-		'cache_type' => env('RAJAONGKIR_CACHE','database'),
+		'cache_type' => env('RAJAONGKIR_CACHE','file'),
 
 
 ];
