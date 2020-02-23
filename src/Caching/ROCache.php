@@ -3,7 +3,7 @@
 	Raja Ongkir API
 	Author: Irfa Ardiansyah <irfa.backend@protonmail.com>
 */
-namespace Irfa\RajaOngkir\Ongkir\Func;
+namespace Irfa\RajaOngkir\Caching;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Cache;
@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\DB;
 use Exception;
 
 class ROCache {
+
+	private static $prov;
+	private static $city;
 
 	public static function cacheFile($name,$find = null){
 		$cache = Cache::get('cache-'.$name);
@@ -20,17 +23,36 @@ class ROCache {
 		return $cache;		
 	}
 	public static function clearCache(){
-		$prov = config('irfa.rajaongkir.province_table');
-		$city = config('irfa.rajaongkir.city_table');
-		if(Schema::hasTable($city) AND Schema::hasTable($prov)){
-			echo "Clearing Cache...".PHP_EOL;
-			$count = DB::table($prov)->truncate();
-			$count = DB::table($city)->truncate();
-			echo "Cache Cleared.";
+		self::$prov = config('irfa.rajaongkir.province_table');
+		self::$city = config('irfa.rajaongkir.city_table');
+		$cache_type = strtolower(config('irfa.rajaongkir.cache_type'));
+		if($cache_type == "database"){
+			if(Schema::hasTable(self::$city) AND Schema::hasTable(self::$prov)){
+				echo "Clearing Cache...".PHP_EOL;
+				self::clearTable();
+				echo "Cache Cleared.";
+			} else{
+				echo "Failed. Cache table not found.";
+				return false;
+			}
+		} elseif($cache_type == "file"){
+				echo "Clearing Cache...".PHP_EOL;
+				self::clearFile();
+				echo "Cache Cleared.";
 		} else{
-			echo "Failed.";
-			return false;
+				echo "Failed. Cache type not support.";
+				return false;
+			}
 		}
+	
+
+	private static function clearTable(){
+		DB::table(self::$prov)->truncate();
+		DB::table(self::$city)->truncate();
+	}
+	private static function clearFile(){
+		Cache::forget('ro-cache-'.self::$city);
+		Cache::forget('ro-cache-'.self::$prov);
 	}
 	public static function checkProv(){
 		$table = config('irfa.rajaongkir.province_table');
