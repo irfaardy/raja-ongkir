@@ -1,6 +1,11 @@
 
 # 🚀Raja Ongkir Laravel Package
 [![GitHub license](https://img.shields.io/github/license/irfaardy/raja-ongkir?style=flat-square)](https://github.com/irfaardy/raja-ongkir/blob/master/LICENSE) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN)
+
+Package ini berguna untuk mengecek biaya ongkos kirim dari kurir, package ini dapat digunakan di Laravel 5 / 6 atau PHP Native.
+
+Silahkan jika anda ingin ikut mengembangkan package ini ^_^6.
+
 <h3>🛠️ Installation with Composer </h3>
 
     composer require irfa/raja-ongkir
