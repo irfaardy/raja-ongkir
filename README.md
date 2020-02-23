@@ -189,4 +189,6 @@ Open console/cmd and run
     	endforeach;
     endforeach;
 
-
+****
+<h2>Contribution</h2>
+If you want to contribute this project and make it better, your help is very welcome.
