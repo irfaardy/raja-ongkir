@@ -61,11 +61,11 @@ Package ini berguna untuk mengecek biaya ongkos kirim dari kurir, package ini da
 
     php artisan vendor:publish --tag=raja-ongkir
 
-Open .env file add line
+Open .env file and add this line
 
     ....
-    RAJAONGKIR_ACCOUNT_TYPE = starter
-    RAJAONGKIR_API_KEY = your-api-key
+    RAJAONGKIR_ACCOUNT_TYPE=starter
+    RAJAONGKIR_API_KEY=your-api-key
     RAJAONGKIR_PROV_TABLE=ro_province
     RAJAONGKIR_CITY_TABLE=ro_city
     RAJAONGKIR_CACHE=database
