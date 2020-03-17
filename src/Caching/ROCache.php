@@ -16,7 +16,7 @@ class ROCache {
 	private static $city;
 
 	public static function cacheFile($name, $find = null) {
-		$cache = Cache::get('cache-'.$name);
+		$cache = Cache::get('ro-cache-'.$name);
 		if ($find != null) {
 			$cache = collect($cache)->where("province_id", $find['province_id']);
 		}
@@ -43,6 +43,8 @@ class ROCache {
 				echo "Failed. Cache type not support.";
 				return false;
 			}
+			self::$prov = null;
+			self::$city = null;
 		}
 	
 
