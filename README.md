@@ -194,10 +194,12 @@ Open console/cmd and run
     	endforeach;
     endforeach;
 
-<h2>Contribution</h2>
-ENG:<br>
-If you want to contribute this project and make it better, your help is very welcome.<br>
-IDN:<br>
-Jika Anda ingin berkontribusi dalam proyek ini dan menjadikannya lebih baik, bantuan Anda sangat kami harapkan.
+## Contributing
+
+1. Fork it (<https://github.com/irfaardy/raja-ongkir/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some Feature'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
 
 ***
