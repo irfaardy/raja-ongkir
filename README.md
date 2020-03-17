@@ -1,7 +1,8 @@
 
 
+
 # 🚀Raja Ongkir Laravel Package
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/badges/quality-score.png?b=master) ](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/?branch=master)[![Build Status](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/badges/build.png?b=master)](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/build-status/master)  [![StyleCI](https://github.styleci.io/repos/242054297/shield?branch=master)](https://github.styleci.io/repos/242054297) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN) [![GitHub license](https://img.shields.io/github/license/irfaardy/raja-ongkir?style=flat-square)](https://github.com/irfaardy/raja-ongkir/blob/master/LICENSE) [![Latest Stable Version](https://poser.pugx.org/irfa/raja-ongkir/v/stable)](https://packagist.org/packages/irfa/raja-ongkir)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/badges/quality-score.png?b=master) ](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/?branch=master)[![Build Status](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/badges/build.png?b=master)](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/build-status/master)  [![StyleCI](https://github.styleci.io/repos/242054297/shield?branch=master)](https://github.styleci.io/repos/242054297) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN) [![Latest Stable Version](https://poser.pugx.org/irfa/raja-ongkir/v/stable)](https://packagist.org/packages/irfa/raja-ongkir)
 
 Package ini berguna untuk mengecek biaya ongkos kirim dari kurir, package ini dapat digunakan di Laravel 5/6/7 atau PHP Native.
 
@@ -74,7 +75,7 @@ Open .env file and add this line
   ***
 <h2>🚀 Caching</h2>
 
-> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini config/irfa/rajaongkir.php. <br>**This function currently only supports the Laravel Framework**<br><br>**Cache support :**  database and file
+> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini config/irfa/rajaongkir.php. <br>**This function currently only supports the Laravel Framework**<br><br>**Cache support :**  database and file<br> (if you don't want to use cache you can set it to null)
 
 
 **Migrating table city and provinsi**
@@ -201,5 +202,5 @@ Open console/cmd and run
 3. Commit your changes (`git commit -am 'Add some Feature'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
-
 ***
+
