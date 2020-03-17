@@ -1,4 +1,4 @@
 <?php
 Route::get('raja-ongkir', function() {
-    dd(RajaOngkir::getProvince());
+	dd(RajaOngkir::getProvince());
 });

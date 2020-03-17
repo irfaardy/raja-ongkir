@@ -15,85 +15,85 @@ class ROCache {
 	private static $prov;
 	private static $city;
 
-	public static function cacheFile($name,$find = null){
+	public static function cacheFile($name, $find = null) {
 		$cache = Cache::get('cache-'.$name);
-		if($find != null){
+		if ($find != null) {
 			$cache = collect($cache)->where("province_id", $find['province_id']);
 		}
 		return $cache;		
 	}
-	public static function clearCache(){
+	public static function clearCache() {
 		self::$prov = config('irfa.rajaongkir.province_table');
 		self::$city = config('irfa.rajaongkir.city_table');
 		$cache_type = strtolower(config('irfa.rajaongkir.cache_type'));
-		if($cache_type == "database"){
-			if(Schema::hasTable(self::$city) AND Schema::hasTable(self::$prov)){
+		if ($cache_type == "database") {
+			if (Schema::hasTable(self::$city) AND Schema::hasTable(self::$prov)) {
 				echo "Clearing Cache...".PHP_EOL;
 				self::clearTable();
 				echo "Cache Cleared.";
-			} else{
+			} else {
 				echo "Failed. Cache table not found.";
 				return false;
 			}
-		} elseif($cache_type == "file"){
+		} elseif ($cache_type == "file") {
 				echo "Clearing Cache...".PHP_EOL;
 				self::clearFile();
 				echo "Cache Cleared.";
-		} else{
+		} else {
 				echo "Failed. Cache type not support.";
 				return false;
 			}
 		}
 	
 
-	private static function clearTable(){
+	private static function clearTable() {
 		DB::table(self::$prov)->truncate();
 		DB::table(self::$city)->truncate();
 	}
-	private static function clearFile(){
+	private static function clearFile() {
 		Cache::forget('ro-cache-'.self::$city);
 		Cache::forget('ro-cache-'.self::$prov);
 	}
-	public static function checkProv(){
+	public static function checkProv() {
 		$table = config('irfa.rajaongkir.province_table');
-		if(Schema::hasTable($table)){
+		if (Schema::hasTable($table)) {
 			$count = DB::table($table)->count();
-			if($count > 0){
+			if ($count > 0) {
 				return true;
 			} else {
 				return false;
 			}
-		} else{
+		} else {
 			return false;
 		}
 	}
-	public static function checkCity(){
+	public static function checkCity() {
 		$table = config('irfa.rajaongkir.city_table');
-		if(Schema::hasTable($table)){
+		if (Schema::hasTable($table)) {
 			$count = DB::table($table)->count();
-			if($count > 0){
+			if ($count > 0) {
 				return true;
 			} else {
 				return false;
 			}
-		} else{
+		} else {
 			return false;
 		}
 	}
-	public static function getProv($arr){
+	public static function getProv($arr) {
 		 $db = DB::table(config('irfa.rajaongkir.province_table'));
-		 if(!empty($arr)){
+		 if (!empty($arr)) {
 		 	$db->where($arr);
 		 }
-		 $ret = $db->orderBy('province','DESC')->get();
+		 $ret = $db->orderBy('province', 'DESC')->get();
 		return $ret;
 	}
-	public static function getCity($arr){
+	public static function getCity($arr) {
 		 $db = DB::table(config('irfa.rajaongkir.city_table'));
-		 if(!empty($arr)){
+		 if (!empty($arr)) {
 		 	$db->where($arr);
 		 }
-		 $ret = $db->orderBy('city_name','ASC')->get();
+		 $ret = $db->orderBy('city_name', 'ASC')->get();
 		return $ret;
 	}
 }
