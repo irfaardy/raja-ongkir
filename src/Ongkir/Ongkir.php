@@ -21,7 +21,7 @@ class Ongkir extends Api{
 	 	 	 return false;
 	 	 }
 	       	
-	    }
+		}
 
 	 public static function cachingProvince(){
 	 	self::cacheProvince();
@@ -59,7 +59,7 @@ class Ongkir extends Api{
 	 		} else{
 	 			$ret = self::get_province(self::$arr);
 	 		}
-	 	}  else{
+	 	} else{
 	 			$ret = self::get_province(self::$arr);
 	 		}
 	 	 	return $ret;
@@ -85,7 +85,7 @@ class Ongkir extends Api{
 	 		} else{
 	 			$ret = self::get_city(self::$arr);
 	 		}
-	 	}  else{
+	 	} else{
 	 			$ret = self::get_city(self::$arr);
 	 		}
 	 	 	return $ret;
