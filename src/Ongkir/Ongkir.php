@@ -11,6 +11,7 @@ use Exception;
 class Ongkir extends Api{
 
 	 private static $arr;
+	 private static $return;
 
 	 public static function find($arr){
 	 	if(is_array($arr)){
@@ -22,7 +23,13 @@ class Ongkir extends Api{
 	 	 }
 	       	
 		}
-
+	 public static function get(){
+	 	if(empty(self::$return)){
+	 	  throw new Exception("Data is not defined.");
+	 	 	return false;
+	 	};
+	 	return self::$return;
+	 }
 	 public static function cachingProvince(){
 	 	self::cacheProvince();
 	 } 
@@ -30,15 +37,17 @@ class Ongkir extends Api{
 	 	self::cacheCity();
 	 }
 
-	 public static function getCostDetails(){
-	 	return self::get_cost_details(self::$arr);
+	 public static function costDetails(){
+	 	self::$return = self::get_cost_details(self::$arr);
+	 	return new static();
 	 } 
 
-	 public static function getCourier(){
-	 	return self::get_courier(self::$arr);
+	 public static function courier(){
+	 	self::$return = self::get_courier(self::$arr);
+	 	return new static();
 	 }
 
-	 public static function getProvince(){
+	 public static function province(){
 	 	if(function_exists('config') AND function_exists('app')){
 	 		$cache_type = strtolower(config('irfa.rajaongkir.cache_type'));
 	 		if($cache_type == 'database'){
@@ -62,10 +71,12 @@ class Ongkir extends Api{
 	 	} else{
 	 			$ret = self::get_province(self::$arr);
 	 		}
-	 	 	return $ret;
+	 		self::$return = $ret;
+	 		return new static();
+	 	 	
 	 }
 
-	 public static function getCity(){
+	 public static function city(){
 		if(function_exists('config') AND function_exists('app')){
 	 		$cache_type = strtolower(config('irfa.rajaongkir.cache_type'));
 	 		if($cache_type == 'database'){
@@ -79,7 +90,7 @@ class Ongkir extends Api{
 	 		} elseif($cache_type == 'file'){
 	 			$ret = ROCache::cacheFile(config('irfa.rajaongkir.city_table'),self::$arr);
 	 			if($ret == null){
-	 				throw new Exception("Cache is empty.");
+	 				throw new Exception("Cache is empty. Try php artisan raja-ongkir:cache");
 	 	 	 		return false;
 	 			}
 	 		} else{
@@ -88,6 +99,7 @@ class Ongkir extends Api{
 	 	} else{
 	 			$ret = self::get_city(self::$arr);
 	 		}
-	 	 	return $ret;
+	 	 	self::$return = $ret;
+	 	 	return new static();
 	 }
 }
