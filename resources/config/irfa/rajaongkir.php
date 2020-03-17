@@ -1,7 +1,7 @@
 <?php
 
 return [
-    /*
+	/*
     |--------------------------------------------------------------------------
     | End Point Api ( Server Configuration )
     |--------------------------------------------------------------------------
@@ -11,8 +11,8 @@ return [
     | Pro       : http://pro.rajaongkir.com/api
     |
     */
-    'account_type' => env('RAJAONGKIR_ACCOUNT_TYPE', 'starter'),
-    /*
+	'account_type' => env('RAJAONGKIR_ACCOUNT_TYPE', 'starter'),
+	/*
     |--------------------------------------------------------------------------
     | API key
     |--------------------------------------------------------------------------
@@ -20,8 +20,8 @@ return [
     |
     */
 
-    'api_key' => env('RAJAONGKIR_API_KEY', 'your-api-key'),
-    /*
+	'api_key' => env('RAJAONGKIR_API_KEY', 'your-api-key'),
+	/*
     |--------------------------------------------------------------------------
     | For Caching
     |--------------------------------------------------------------------------
@@ -33,10 +33,10 @@ return [
     | Cache supported database,and file. If you can't use cache, set value to null
     */
 
-    'province_table' => env('RAJAONGKIR_PROV_TABLE', 'ro_province'),
+	'province_table' => env('RAJAONGKIR_PROV_TABLE', 'ro_province'),
 
-    'city_table' => env('RAJAONGKIR_CITY_TABLE', 'ro_city'),
+	'city_table' => env('RAJAONGKIR_CITY_TABLE', 'ro_city'),
 
-    'cache_type' => env('RAJAONGKIR_CACHE', null),
+	'cache_type' => env('RAJAONGKIR_CACHE', null),
 
 ];
