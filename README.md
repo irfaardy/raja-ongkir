@@ -1,3 +1,4 @@
+
 # 🚀Raja Ongkir Laravel Package
 [![GitHub license](https://img.shields.io/github/license/irfaardy/raja-ongkir?style=flat-square)](https://github.com/irfaardy/raja-ongkir/blob/master/LICENSE) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN)
 
@@ -72,7 +73,7 @@ Open .env file add line
   ***
 <h2>🚀 Caching</h2>
 
-> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini config/irfa/rajaongkir.php. <br><br>**Cache support :**  database and file
+> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini config/irfa/rajaongkir.php. <br>**This function currently only supports the Laravel Framework**<br><br>**Cache support :**  database and file
 
 
 **Migrating table city and provinsi**
@@ -97,6 +98,11 @@ Open console/cmd and run
 Open console/cmd and run
 
     php artisan raja-ongkir:clear
+<h3>Refresh Cache</h3><br>
+Clear old cache and create latest cache.<br>
+Open console/cmd and run
+
+    php artisan raja-ongkir:refresh
 ***
   <h3>💻 Usage</h3>
 
