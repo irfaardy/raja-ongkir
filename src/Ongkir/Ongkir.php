@@ -84,12 +84,16 @@ class Ongkir extends Api
 
         return new static();
     }
-    private static function setupConfig(){
+
+    private static function setupConfig()
+    {
         self::$cacheType = strtolower(config('irfa.rajaongkir.cache_type'));
         self::$province = config('irfa.rajaongkir.province_table');
         self::$city = config('irfa.rajaongkir.city_table');
     }
-    private static function provinceData(){
+
+    private static function provinceData()
+    {
          if (function_exists('config') && function_exists('app')) {
             self::setupConfig();
             $cache_type = self::$cacheType;
@@ -112,9 +116,12 @@ class Ongkir extends Api
         } else {
             $ret = self::get_province(self::$arr);
         }
+
         return $ret;
     }
-    private static function cityData(){
+
+    private static function cityData()
+    {
         if (function_exists('config') && function_exists('app')) {
             self::setupConfig();
             $cache_type = self::$cacheType;
@@ -140,10 +147,11 @@ class Ongkir extends Api
 
         return $ret;
     }
-    private static function exceptionCache(){
+
+    private static function exceptionCache()
+    {
         throw new Exception('Cache file is empty. Try php artisan raja-ongkir:cache');
 
         return false;
-
     }
 }
