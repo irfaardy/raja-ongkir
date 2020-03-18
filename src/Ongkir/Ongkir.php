@@ -90,7 +90,7 @@ class Ongkir extends Api
         self::$city = config('irfa.rajaongkir.city_table');
     }
     private static function provinceData(){
-         if (function_exists('config') and function_exists('app')) {
+         if (function_exists('config') && function_exists('app')) {
             self::setupConfig();
             $cache_type = self::$cacheType;
             if ($cache_type == 'database') {
@@ -115,7 +115,7 @@ class Ongkir extends Api
         return $ret;
     }
     private static function cityData(){
-        if (function_exists('config') and function_exists('app')) {
+        if (function_exists('config') && function_exists('app')) {
             self::setupConfig();
             $cache_type = self::$cacheType;
             if ($cache_type == 'database') {
