@@ -94,7 +94,7 @@ class Ongkir extends Api
 
     private static function provinceData()
     {
-         if (function_exists('config') && function_exists('app')) {
+        if (function_exists('config') && function_exists('app')) {
             self::setupConfig();
             $cache_type = self::$cacheType;
             if ($cache_type == 'database') {
