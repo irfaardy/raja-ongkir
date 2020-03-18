@@ -1,6 +1,3 @@
-
-
-
 # 🚀Raja Ongkir Laravel Package
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/badges/quality-score.png?b=master) ](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/?branch=master)[![Build Status](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/badges/build.png?b=master)](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/build-status/master)  [![StyleCI](https://github.styleci.io/repos/242054297/shield?branch=master)](https://github.styleci.io/repos/242054297) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN) [![Latest Stable Version](https://poser.pugx.org/irfa/raja-ongkir/v/stable)](https://packagist.org/packages/irfa/raja-ongkir)
 
@@ -75,7 +72,7 @@ Open .env file and add this line
   ***
 <h2>🚀 Caching</h2>
 
-> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini config/irfa/rajaongkir.php. <br>**This function currently only supports the Laravel Framework**<br><br>**Cache support :**  database and file<br> (if you don't want to use cache you can set it to null)
+> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini ***config/irfa/rajaongkir.php***. <br>**This function currently only supports the Laravel Framework**<br><br>**Cache support :**  database and file<br> ( if you don't want to use cache you can set it to *null* )
 
 
 **Migrating table city and provinsi**
@@ -113,19 +110,16 @@ Open console/cmd and run
 <h3>Retrieve all province</h3>
 
      $get = RajaOngkir::province()->get();
-     foreach($get as $prov):
-    
+     foreach($get as $prov)
+     {
 		echo $prov->province_id."<br>"; // value = 1
 		echo $prov->province."<br>";// value = Bali
-		
-		
-    endforeach;
+	 }
 <h3>Search province</h3>
 
  
 
        $get = RajaOngkir::find(['province_id' => 1])->province()->get();
-         
     	echo $get->province_id."<br>"; // value = 1
     	echo $get->province."<br>";// value = Bali
 	
@@ -133,46 +127,39 @@ Open console/cmd and run
 <h3>Retrieve all City</h3>
 
     $get = RajaOngkir::city()->get();
-    foreach($get as $city):
-    
+    foreach($get as $city)
+    {
 		echo $city->city_id."<br>"; // value = 17
 		echo $city->province_id."<br>";// value = 1
 		echo $city->province."<br>";// value = Bali
 		echo $city->type."<br>"; // value = Kabupaten
 		echo $city->city_name."<br>"; // value = Badung
 		echo $city->postal_code."<br>"; // value = 80351
-		
-    endforeach;
+	}
     
 <h3>Retrieve all city in province</h3>
 
-    
-    $get = RajaOngkir::find(['province_id' => 1])->city()->get();
-    foreach($get as $city):
-    
-		echo $city->city_id."<br>"; // value = 17
-		echo $city->province_id."<br>";// value = 1
-		echo $city->province."<br>";// value = Bali
-		echo $city->type."<br>"; // value = Kabupaten
-		echo $city->city_name."<br>"; // value = Badung
-		echo $city->postal_code."<br>"; // value = 80351
-		
-    endforeach;
+        
+        $get = RajaOngkir::find(['province_id' => 1])->city()->get();
+        foreach($get as $city){
+    		echo $city->city_id."<br>"; // value = 17
+    		echo $city->province_id."<br>";// value = 1
+    		echo $city->province."<br>";// value = Bali
+    		echo $city->type."<br>"; // value = Kabupaten
+    		echo $city->city_name."<br>"; // value = Badung
+    		echo $city->postal_code."<br>"; // value = 80351
+         }
+
   <h3>Retrieve courier</h3>
    
 
-      $get = RajaOngkir::find(['origin'=>1,
-				    'destination'=>2,
-				    'weight'=>1000,//1000gr
-				    'courier' => 'jne'
-				   ])
-		->courier()->get();
-	  foreach($get as $city):
-    
+      $get = RajaOngkir::find(['origin'=>1,'destination'=>2,'weight'=>1000,'courier' => 'jne'])
+		 ->courier()->get();
+	  foreach($get as $city)
+	  {
 		echo $city->code."<br>"; // value = jne
 		echo $city->name."<br>";// value = Jalur Nugraha Ekakurir (JNE)
-		
-	  endforeach;
+	  }
 	  
 <h3>Retrieve  cost courier</h3>
    
@@ -180,20 +167,18 @@ Open console/cmd and run
      $params = ['origin'=>1,'destination'=>2,'weight'=>1000,'courier' => 'jne'
     			   ];
 	     $get = RajaOngkir::find($params)->costDetails()->get();
-	     foreach($get as $cost):
-
-
-     
-    	echo "Service: ".$cost->service."<br>";
-    	echo "Description: ".$cost->description."<br>";
-    	
-    	foreach($cost->cost as $detail):
+	     foreach($get as $cost)
+	     {
+		echo "Courier Name: ".$cost->service."<br>";
+		echo "Description: ".$cost->description."<br>";
+    	 foreach($cost->cost as $detail)
+    	 {
     		echo "Harga: ".$detail->value."<br>";
     		echo "Estimasi: ".$detail->etd."<br>";
     		echo "Note: ".$detail->note."<br>";
     		echo "<hr>";
-    	endforeach;
-    endforeach;
+    	 }
+          }
 
 ## Contributing
 
