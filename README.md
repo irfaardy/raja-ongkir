@@ -1,13 +1,19 @@
 
+
+
 # 🚀Raja Ongkir Laravel Package
-[![GitHub license](https://img.shields.io/github/license/irfaardy/raja-ongkir?style=flat-square)](https://github.com/irfaardy/raja-ongkir/blob/master/LICENSE) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/badges/quality-score.png?b=master) ](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/?branch=master)[![Build Status](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/badges/build.png?b=master)](https://scrutinizer-ci.com/g/irfaardy/raja-ongkir/build-status/master)  [![StyleCI](https://github.styleci.io/repos/242054297/shield?branch=master)](https://github.styleci.io/repos/242054297) [![Support me](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/OBaAofN) [![Latest Stable Version](https://poser.pugx.org/irfa/raja-ongkir/v/stable)](https://packagist.org/packages/irfa/raja-ongkir)
+
+Package ini berguna untuk mengecek biaya ongkos kirim dari kurir, package ini dapat digunakan di Laravel 5/6/7 atau PHP Native.
+
+
 <h3>🛠️ Installation with Composer </h3>
 
     composer require irfa/raja-ongkir
 
 >You can get Composer [ here]( https://getcomposer.org/download/)
 
-***
+
 
 
 <h2>🛠️ PHP Native Setup</h2>
@@ -57,11 +63,11 @@
 
     php artisan vendor:publish --tag=raja-ongkir
 
-Open .env file add 
+Open .env file and add this line
 
     ....
-    RAJAONGKIR_ACCOUNT_TYPE = starter
-    RAJAONGKIR_API_KEY = your-api-key
+    RAJAONGKIR_ACCOUNT_TYPE=starter
+    RAJAONGKIR_API_KEY=your-api-key
     RAJAONGKIR_PROV_TABLE=ro_province
     RAJAONGKIR_CITY_TABLE=ro_city
     RAJAONGKIR_CACHE=database
@@ -69,7 +75,7 @@ Open .env file add
   ***
 <h2>🚀 Caching</h2>
 
-> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini config/irfa/rajaongkir.php. <br><br>**Cache support :**  database and file
+> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini config/irfa/rajaongkir.php. <br>**This function currently only supports the Laravel Framework**<br><br>**Cache support :**  database and file<br> (if you don't want to use cache you can set it to null)
 
 
 **Migrating table city and provinsi**
@@ -94,6 +100,11 @@ Open console/cmd and run
 Open console/cmd and run
 
     php artisan raja-ongkir:clear
+<h3>Refresh Cache</h3><br>
+Clear old cache and create latest cache.<br>
+Open console/cmd and run
+
+    php artisan raja-ongkir:refresh
 ***
   <h3>💻 Usage</h3>
 
@@ -101,7 +112,7 @@ Open console/cmd and run
 
 <h3>Retrieve all province</h3>
 
-     $get = RajaOngkir::getProvince();
+     $get = RajaOngkir::province()->get();
      foreach($get as $prov):
     
 		echo $prov->province_id."<br>"; // value = 1
@@ -113,7 +124,7 @@ Open console/cmd and run
 
  
 
-       $get = RajaOngkir::find(['province_id' => 1])->getProvince();
+       $get = RajaOngkir::find(['province_id' => 1])->province()->get();
          
     	echo $get->province_id."<br>"; // value = 1
     	echo $get->province."<br>";// value = Bali
@@ -121,7 +132,7 @@ Open console/cmd and run
    
 <h3>Retrieve all City</h3>
 
-    $get = RajaOngkir::getCity();
+    $get = RajaOngkir::city()->get();
     foreach($get as $city):
     
 		echo $city->city_id."<br>"; // value = 17
@@ -136,7 +147,7 @@ Open console/cmd and run
 <h3>Retrieve all city in province</h3>
 
     
-    $get = RajaOngkir::find(['province_id' => 1])->getCity();
+    $get = RajaOngkir::find(['province_id' => 1])->city()->get();
     foreach($get as $city):
     
 		echo $city->city_id."<br>"; // value = 17
@@ -155,7 +166,7 @@ Open console/cmd and run
 				    'weight'=>1000,//1000gr
 				    'courier' => 'jne'
 				   ])
-		->getCourier();
+		->courier()->get();
 	  foreach($get as $city):
     
 		echo $city->code."<br>"; // value = jne
@@ -168,7 +179,7 @@ Open console/cmd and run
 
      $params = ['origin'=>1,'destination'=>2,'weight'=>1000,'courier' => 'jne'
     			   ];
-	     $get = RajaOngkir::find($params)->getCostDetails();
+	     $get = RajaOngkir::find($params)->costDetails()->get();
 	     foreach($get as $cost):
 
 
@@ -177,11 +188,19 @@ Open console/cmd and run
     	echo "Description: ".$cost->description."<br>";
     	
     	foreach($cost->cost as $detail):
-    		echo "Value: ".$detail->value."<br>";
+    		echo "Harga: ".$detail->value."<br>";
     		echo "Estimasi: ".$detail->etd."<br>";
     		echo "Note: ".$detail->note."<br>";
     		echo "<hr>";
     	endforeach;
     endforeach;
 
+## Contributing
+
+1. Fork it (<https://github.com/irfaardy/raja-ongkir/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some Feature'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+***
 

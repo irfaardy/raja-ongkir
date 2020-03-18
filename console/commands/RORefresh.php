@@ -3,23 +3,24 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Irfa\RajaOngkir\Caching\ROCache;
 use Irfa\RajaOngkir\Ongkir\Ongkir as RajaOngkir;
 
-class ROCacheAll extends Command
+class RORefresh extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'raja-ongkir:cache';
+    protected $signature = 'raja-ongkir:refresh';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create City and Province list cache for faster loading city and province. ';
+    protected $description = 'Refresh Cache';
 
     /**
      * Create a new command instance.
@@ -39,6 +40,11 @@ class ROCacheAll extends Command
     public function handle()
     {
         echo '---------------------'.PHP_EOL;
+        echo'Refresh Cache'.PHP_EOL;
+        echo'---------------------'.PHP_EOL;
+        ROCache::clearCache();
+        sleep(1); //Cooling Down
+        echo PHP_EOL.'---------------------'.PHP_EOL;
         echo'Province Caching'.PHP_EOL;
         echo'---------------------'.PHP_EOL;
         RajaOngkir::cachingProvince();

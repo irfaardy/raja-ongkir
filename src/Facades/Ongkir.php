@@ -1,7 +1,8 @@
 <?php
-/* 
-	Author: Irfa Ardiansyah <irfa.backend@protonmail.com>
+/*
+    Author: Irfa Ardiansyah <irfa.backend@protonmail.com>
 */
+
 namespace Irfa\RajaOngkir\Facades;
 
 use Illuminate\Support\Facades\Facade;

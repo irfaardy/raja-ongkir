@@ -3,7 +3,7 @@
     "description": "\"Laravel Raja Ongkir Package\"",
     "type": "package",
     "license": "MIT",
-    "version": "v1.2",
+    "version": "v1.32",
     "keywords": ["laravel", "ongkir", "cek ongkir", "raja ongkir", "php"],
     "authors": [
         {

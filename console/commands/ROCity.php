@@ -38,6 +38,6 @@ class ROCity extends Command
      */
     public function handle()
     {
-       RajaOngkir::cachingCity();
+        RajaOngkir::cachingCity();
     }
 }
