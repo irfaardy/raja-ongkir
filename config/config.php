@@ -1,4 +1,5 @@
 <?php
+    /* Config for PHP Native */
 
     $config = [
         /*
