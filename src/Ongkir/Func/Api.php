@@ -17,10 +17,6 @@ class Api extends CacheCurl
     private static $url;
     private static $count = 0;
 
-    public function __construct()
-    {
-    }
-
     private static function setup_option()
     {
         if (function_exists('config') and function_exists('app')) {//Load Config For Laravel
