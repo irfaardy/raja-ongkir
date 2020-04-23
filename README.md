@@ -180,12 +180,11 @@ Open console/cmd and run
     	 }
           }
 
-## Contributing
+## How to Contributing?
 
-1. Fork it (<https://github.com/irfaardy/raja-ongkir/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some Feature'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+1. Fork it (<https://github.com/irfaardy/php-gatcha/fork>)
+2. Commit your changes (`git commit -m 'New Feature'`)
+3. Push to the branch (`git push origin master`)
+4. Create a new Pull Request
 ***
 
