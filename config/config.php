@@ -1,6 +1,6 @@
 <?php
 
-    /* Config for PHP Native */
+    /* Config for PHP Native or non-Framework */
 
     $config = [
         /*
