@@ -31,6 +31,6 @@ class CreateCity extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('city');
+        Schema::dropIfExists('ro_city');
     }
 }
