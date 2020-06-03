@@ -27,6 +27,6 @@ class CreateProvince extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('province');
+        Schema::dropIfExists('ro_province');
     }
 }
