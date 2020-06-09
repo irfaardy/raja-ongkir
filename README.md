@@ -88,7 +88,7 @@ Open .env file and add this line
 
 <h2>🚀 Caching</h2>
 
-> Caching is useful for loading city and province faster🚀.<br>You can change cache type ini ***config/irfa/rajaongkir.php***. <br>**This function currently only supports the Laravel Framework**<br><br>**Cache support :**  database and file<br> ( if you don't want to use cache you can set it to *null* )
+> Caching is useful for loading city and province faster🚀.<br>You can change cache type in ***config/irfa/rajaongkir.php or project_name/.env***. <br>**This function currently only supports the Laravel Framework**<br><br>**Cache support :**  database and file<br> ( if you don't want to use cache you can set it to *null* )
 
 
 **Migrating table city and provinsi**
