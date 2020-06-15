@@ -231,3 +231,11 @@ foreach($get as $city)
 4. Create a new Pull Request
 
 ***
+## Bagaimana cara berkontribusi?
+
+1. Lakukan fork di (<https://github.com/irfaardy/raja-ongkir/fork>)
+2. Commit perubahan yang anda lakukan (`git commit -m 'Fitur Baru'`)
+3. Push ke branch master (`git push origin master`)
+4. Buat Pull Request baru
+
+***
