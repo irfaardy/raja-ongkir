@@ -22,4 +22,12 @@
     |
     */
         'api_key' => 'your-api-key',
+    /*
+    |--------------------------------------------------------------------------
+    | API Version (for account type basic and pro)
+    |--------------------------------------------------------------------------
+    | You can get API key in www.rajaongkir.com
+    |
+    */
+        'api_key' => 'v2',
     ];
