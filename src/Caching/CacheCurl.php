@@ -49,6 +49,13 @@ class CacheCurl extends DBImport
         self::_import();
     }
 
+    protected static function subdistrict()
+    {
+        self::$table = config('irfa.rajaongkir.subdistrict_table');
+        self::$type = 'subdistrict';
+        self::_import();
+    }
+
     private static function formatBytes($size, $precision = 2)
     {
         $base = log($size, 1024);

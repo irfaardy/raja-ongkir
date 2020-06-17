@@ -25,6 +25,9 @@ class DBImport
                 } elseif ($type == 'city') {
                     $fill = ['city_id'=>$r->city_id, 'province_id'=>$r->province_id, 'province' => $r->province, 'type'=>$r->type, 'city_name'=>$r->city_name, 'postal_code'=>$r->postal_code];
                     $where = ['city_id' => $r->city_id];
+                } elseif ($type == 'subdistrict') {
+                    $fill = ['subdistrict_id'=>$r->subdistrict_id, 'province_id'=>$r->province_id, 'province' => $r->province, 'city_id'=>$r->city_id, 'city'=>$r->city, 'type'=>$r->type,'subdistrict_name'=>$r->subdistrict_name];
+                    $where = ['subdistrict_id' => $r->subdistrict_id];
                 }
                 if (DB::table(self::$table_DB)->where($where)->count() == 0) {
                     DB::table(self::$table_DB)->insert($fill);

@@ -107,6 +107,17 @@ class ROCache
         return $ret;
     }
 
+    public static function getSubdistrict($arr)
+    {
+        $db = DB::table(config('irfa.rajaongkir.subdistrict_table'));
+        if (!empty($arr)) {
+            $db->where($arr);
+        }
+        $ret = $db->orderBy('subdistrict_name', 'DESC')->get();
+
+        return $ret;
+    }
+
     public static function getCity($arr)
     {
         $db = DB::table(config('irfa.rajaongkir.city_table'));
