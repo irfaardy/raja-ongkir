@@ -11,9 +11,14 @@ class RajaOngkirServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    protected $commands = [
+       'Irfa\RajaOngkir\Console\Commands\ROCache',
+       'Irfa\RajaOngkir\Console\Commands\ROInfoPackage',
+    ];
+
     public function register()
     {
-        //
+        $this->commands($this->commands);
     }
 
     /**
@@ -31,9 +36,6 @@ class RajaOngkirServiceProvider extends ServiceProvider
         ], 'raja-ongkir');
 
         $this->publishes([__DIR__.'/../database/migrations/' => database_path('migrations'),
-        ], 'raja-ongkir');
-
-        $this->publishes([__DIR__.'/../console/' => app_path('console'),
         ], 'raja-ongkir');
     }
 }
