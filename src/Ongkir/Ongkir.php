@@ -50,6 +50,21 @@ class Ongkir extends Api
         self::cacheProvince();
     }
 
+     public static function cachingSubDistrict()
+    {
+        $get = self::cityData();
+        $count = count($get);
+        $i=0;
+        echo PHP_EOL."\033[42mThis may take longer, please wait.\033[0m";
+        foreach($get as $city){
+            $i++;
+             echo PHP_EOL."Remaining City\033[96m ".$i."/".$count."\033[0m";
+             echo PHP_EOL."Get Subdistrict\033[96m ".$city->city_name."...\033[0m".PHP_EOL;
+             self::cacheSubDistrict(['city' =>  $city->city_id]);
+             echo PHP_EOL;
+        }
+    }
+
     public static function cachingCity()
     {
         self::cacheCity();
@@ -68,10 +83,25 @@ class Ongkir extends Api
 
         return new static();
     }
-
+   
     public static function province()
     {
         $ret = self::provinceData();
+        self::$return = $ret;
+
+        return new static();
+    } 
+
+    public static function subDistrict()
+    {
+        $ret = self::subDistrictData();
+        self::$return = $ret;
+
+        return new static();
+    }
+    public static function internationalOrigin()
+    {
+        $ret = self::internationalOriginData();
         self::$return = $ret;
 
         return new static();
@@ -119,7 +149,41 @@ class Ongkir extends Api
 
         return $ret;
     }
+    private static function subDistrictData()
+    {
+        if (function_exists('config') && function_exists('app')) {
+            self::setupConfig();
+            $cache_type = self::$cacheType;
+            if ($cache_type == 'database') {
+                if (ROCache::checkProv()) {
+                    if (count(ROCache::getSubdistrict(self::$arr)) > 0) {
+                        $ret = ROCache::getSubdistrict(self::$arr);
+                    } else {
+                        $ret = self::getSubdistrict(self::$arr);
+                    }
+                }
+            } elseif ($cache_type == 'file') {
+                $ret = ROCache::cacheFile(self::$province, self::$arr);
+                if ($ret == null) {
+                    self::exceptionCache();
+                }
+            } else {
+                $ret = self::getSubdistrict(self::$arr);
+            }
+        } else {
+            $ret = self::getSubdistrict(self::$arr);
+        }
 
+        return $ret;
+    }
+    private static function internationalOriginData()
+    {
+        
+            $ret = self::get_international_origin(self::$arr);
+     
+
+        return $ret;
+    }
     private static function cityData()
     {
         if (function_exists('config') && function_exists('app')) {
