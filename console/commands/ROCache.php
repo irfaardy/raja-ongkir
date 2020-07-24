@@ -4,6 +4,7 @@ namespace Irfa\RajaOngkir\Console\Commands;
 
 use Illuminate\Console\Command;
 use Irfa\RajaOngkir\Ongkir\Ongkir as RajaOngkir;
+use Irfa\RajaOngkir\Caching\ROCache as CacheCMD;
 
 class ROCache extends Command
 {
@@ -47,9 +48,9 @@ class ROCache extends Command
         } elseif($this->argument('name') == "subdistrict"){
              RajaOngkir::cachingSubDistrict();
         } elseif($this->argument('name') == "clear"){
-             ROCache::clearCache();
+             CacheCMD::clearCache();
         } elseif($this->argument('name') == "refresh"){
-             ROCache::refresh();
+             CacheCMD::refresh();
         } else{
              $this->line('<fg=yellow>valid input is  all, clear, refresh, city, province and subdistrict.');
         }
@@ -82,7 +83,7 @@ class ROCache extends Command
         echo "---------------------".PHP_EOL;
         echo"Refresh Cache".PHP_EOL;
         echo"---------------------".PHP_EOL;
-        ROCache::clearCache();
+        CacheCMD::clearCache();
         echo "---------------------".PHP_EOL;
         echo"Province Caching".PHP_EOL;
         echo"---------------------".PHP_EOL;

@@ -11,9 +11,12 @@ class RajaOngkirServiceProvider extends ServiceProvider
      *
      * @return void
      */
+     protected $commands = [
+        'Irfa\RajaOngkir\Console\Commands\ROCache',
+        ];
     public function register()
     {
-        //
+         $this->commands($this->commands);
     }
 
     /**
