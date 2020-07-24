@@ -254,4 +254,50 @@ private static function exceptCurl($err){
             }
 }
 
+protected static function test_connection($arr = null)
+{
+        if ($arr != null) {
+            $province_id = array_key_exists('province_id', $arr) ? '?id='.$arr['province_id'] : null;
+        } else {
+            $province_id = null;
+        }
+        self::setup_option();
+        $curl = curl_init();
+        curl_setopt_array($curl, [
+            CURLOPT_URL            => self::$url.'/province'.$province_id,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING       => '',
+            CURLOPT_MAXREDIRS      => 10,
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST  => 'GET',
+            CURLOPT_HTTPHEADER     => [
+                'key: '.self::$api_key,
+            ],
+        ]);
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            $result = false;
+            return $result;
+        } else {
+            $data = json_decode($response, false);
+            if(!empty($data)){
+                $json = $data->rajaongkir;
+                if ($json->status->code == '400') {
+                    $result = ['res' => $json->status->code,'success'=> false];
+                    return $result;
+                } else {
+                    $result = ['res' => "Connected to server.",'success'=> true];
+                    return $result;
+                }
+             } else{
+                 $result = ['res' => "Data is Empty.",'success'=> false];
+                return $result;
+             }
+        }
+    }
 }

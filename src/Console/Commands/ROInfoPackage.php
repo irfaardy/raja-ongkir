@@ -44,7 +44,7 @@ class ROInfoPackage extends Command
             $this->line('Api Key: '.config('irfa.rajaongkir.api_key'));
         } elseif($this->argument('cmd') == "type"){
             $this->line('Account Type: '.config('irfa.rajaongkir.account_type'));
-        } elseif($this->argument('cmd') == "info"){
+        }  elseif($this->argument('cmd') == "info"){
              $this->informasi();
             $this->line('-------------------------------------------------------------------------------');
             $this->line('Account Type: '.config('irfa.rajaongkir.account_type'));
@@ -55,12 +55,12 @@ class ROInfoPackage extends Command
             $this->line('Subdistrict Table: '.config('irfa.rajaongkir.subdistrict_table'));
             $this->line('Cache Type: '.config('irfa.rajaongkir.cache_type'));
         } else{
-             $this->line('<fg=yellow>valid input is  all, clear, refresh, city, province and subdistrict.');
+             $this->line('<fg=yellow>valid input is  version, key, type, info,and v.');
         }
     }
 
     private function informasi(){
-         $this->line("|_   _|     / _|               |  __ \     (_)        / __ \            | |  (_)     
+         $this->line(" |_   _|     / _|               |  __ \     (_)        / __ \            | |  (_)     
    | |  _ __| |_ __ _   ______  | |__) |__ _ _  __ _  | |  | |_ __   __ _| | ___ _ __ 
    | | | '__|  _/ _` | |______| |  _  // _` | |/ _` | | |  | | '_ \ / _` | |/ / | '__|
   _| |_| |  | || (_| |          | | \ \ (_| | | (_| | | |__| | | | | (_| |   <| | |   

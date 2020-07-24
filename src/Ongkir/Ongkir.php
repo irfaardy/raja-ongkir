@@ -75,6 +75,12 @@ class Ongkir extends Api
         self::$return = self::get_cost_details(self::$arr);
 
         return new static();
+    } 
+    public static function testConnection()
+    {
+        self::$return = self::test_connection(self::$arr);
+
+        return new static();
     }
 
     public static function courier()
