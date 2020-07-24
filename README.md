@@ -100,36 +100,36 @@ Open .env file and add this line
 
     php artisan migrate
 
-<h3>Caching Province and City</h3><br>
+<h3>Caching Province,Sub-District and City</h3><br>
 
 Open console/cmd and run
 
-    php artisan raja-ongkir:cache
+    php artisan raja-ongkir:cache all
 
 <h3>Caching City</h3><br>
 
 Open console/cmd and run
 
-    php artisan raja-ongkir:city-cache
+    php artisan raja-ongkir:cache city
 
 <h3>Caching Province</h3><br>
 
 Open console/cmd and run
 
-    php artisan raja-ongkir:prov-cache
+    php artisan raja-ongkir:cache province
 
 <h3>Clear Cache</h3><br>
 
 Open console/cmd and run
 
-    php artisan raja-ongkir:clear
+    php artisan raja-ongkir:cache clear
 
 <h3>Refresh Cache</h3><br>
 
 Clear old cache and create latest cache.<br>
 Open console/cmd and run
 
-    php artisan raja-ongkir:refresh
+    php artisan raja-ongkir:cache refresh
 
 ***
 

@@ -52,6 +52,11 @@ class Ongkir extends Api
 
      public static function cachingSubDistrict()
     {
+        if(strtolower(config('irfa.rajaongkir.account_type')) == "starter")
+        {
+             echo "Tidak dapat mengambil SubDistrict dikarenakan akun yg anda pakai tipe starter.";
+             return true;
+        }
         $get = self::cityData();
         $count = count($get);
         $i=0;
