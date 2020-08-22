@@ -233,6 +233,10 @@ foreach($get as $city)
 3. Push to the branch (`git push origin master`)
 4. Create a new Pull Request
 
+if you find bugs or errors, please post here https://github.com/irfaardy/raja-ongkir/issues so that they can be maintained together.
+
+
+
 ***
 ## Bagaimana cara berkontribusi?
 
@@ -240,5 +244,7 @@ foreach($get as $city)
 2. Commit perubahan yang anda lakukan (`git commit -m 'Fitur Baru'`)
 3. Push ke branch master (`git push origin master`)
 4. Buat Pull Request baru
+
+Jika anda menemukan bug atau error silahkan posting disini https://github.com/irfaardy/raja-ongkir/issues agar dapat diperbaiki bersama-sama.
 
 ***
