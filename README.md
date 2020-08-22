@@ -233,7 +233,7 @@ foreach($get as $city)
 3. Push to the branch (`git push origin master`)
 4. Create a new Pull Request
 
-if you find bugs or errors, please post here https://github.com/irfaardy/raja-ongkir/issues so that they can be maintained together.
+if you find a bug or error, please post here https://github.com/irfaardy/raja-ongkir/issues so that they can be maintained together.
 
 
 
