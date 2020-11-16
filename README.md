@@ -245,6 +245,9 @@ if you found bug or error, please post here https://github.com/irfaardy/raja-ong
 3. Push ke branch master (`git push origin master`)
 4. Buat Pull Request baru
 
-Jika anda menemukan bug atau error silahkan posting disini https://github.com/irfaardy/raja-ongkir/issues agar dapat diperbaiki bersama-sama.
+---
+## Issue
+If you found issues or bug please create new issues here https://github.com/irfaardy/php-gacha/issues/new
 
+Jika anda menemukan bug atau error silahkan posting disini https://github.com/irfaardy/raja-ongkir/issues agar dapat diperbaiki bersama-sama.
 ***
